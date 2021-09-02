@@ -1,0 +1,10 @@
+<ul>
+  <% @rooms.each do |room| %>
+    <li>
+      <%= image_tag room.interior %>
+      <%= room.room_name %>
+      <%= room.capacity %>
+      <%= room.price %>
+    </li>
+  <% end %>
+</ul>
