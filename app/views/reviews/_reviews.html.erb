@@ -1,0 +1,9 @@
+<ul>
+  <% @reviews.each do |review| %>
+    <li>
+      <%= review.reviewer_name %>
+      <%= review.email %>
+      <%= review.body %>
+    </li>
+  <% end %>
+</ul>
