@@ -1,24 +1,5 @@
 <h1>Reviews</h1>
 
-<%= form_with model: @review do |form| %>
-  <div>
-    <%= form.label :reviewer_name %><br>
-    <%= form.text_field :reviewer_name %>
-  </div>
+<%= render 'reviews/form' %>
 
-  <div>
-    <%= form.label :email %><br>
-    <%= form.text_area :email %>
-  </div>
-
-  <div>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
-
-<%= render 'reviews' %>
+<%= render 'reviews/reviews' %>

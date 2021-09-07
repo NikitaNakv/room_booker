@@ -4,6 +4,10 @@
       <%= review.reviewer_name %>
       <%= review.email %>
       <%= review.status %>
+      <% if admin_signed_in? and review.status == false %>
+        <li><%= link_to "Accept", "/reviews/#{review.id}/accept", method: :patch %></li>
+        <li><%= link_to "Destroy", review_path(review), method: :delete %></li>
+      <% end %>
     </li>
     <p><%= review.body %></p>
   <% end %>

@@ -1,0 +1,7 @@
+<% if admin_signed_in? %>
+  <button><%= link_to "Log out", destroy_admin_session_path, method: :delete %></button>
+  <button><%= link_to "All rooms", '/rooms', method: :get %></button>
+  <button><%= link_to "New room", '/rooms/new' %></button>
+  <button><%= link_to "All reviews", '/reviews/index' %></button>
+  <button><%= link_to "Manage bookings", '/reviews/index' %></button>
+<% end %>

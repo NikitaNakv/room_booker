@@ -7,7 +7,7 @@ class Review < ApplicationRecord
   validates :body, presence: true, length: { minimum: 20 }
 
   scope :accepted?, lambda { |status|
-    where('status == ?', status)
+    where('status = ?', status)
   }
 
   def default_values

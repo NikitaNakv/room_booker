@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
   before_action :authenticate_admin!, only: %i[new show index edit update]
 
   def index
-    @reviews = Review.all
+    @reviews = Review.all.order(created_at: :desc)
   end
 
   def show
@@ -30,25 +30,19 @@ class ReviewsController < ApplicationController
     @reviews = Review.accepted? true
   end
 
-  def edit
-    @review = Review.find(params[:id])
+  def accept
+    @review = Review.find(params[:id] )
+    @review.update(status: true)
+    redirect_to "/reviews/index"
   end
 
-  def update
-    @review = Review.find(params[:id])
 
-    if @review.update(room_params)
-      redirect_to @review
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
 
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
 
-    redirect_to root_path
+    redirect_to "review#index"
   end
 
   private
