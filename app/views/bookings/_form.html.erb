@@ -1,0 +1,41 @@
+<%= form_with model: @booking do |form| %>
+  <div>
+    <%= form.label :customer_first_name %><br>
+    <%= form.text_field :customer_first_name %>
+    <% @booking.errors.full_messages_for(:customer_first_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :customer_second_name %><br>
+    <%= form.text_area :customer_second_name %>
+    <% @booking.errors.full_messages_for(:customer_second_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :date_in %><br>
+    <%= form.date_select :date_in %>
+    <% @booking.errors.full_messages_for(:date_in).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :date_out %><br>
+    <%= form.date_select :date_out %>
+    <% @booking.errors.full_messages_for(:date_out).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <% if flash[:errors] %>
+      <div class="errors"><%= flash[:errors] %></div>
+    <% end %>
+
+    <%= form.submit %>
+  </div>
+<% end %>

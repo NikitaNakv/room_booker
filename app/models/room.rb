@@ -2,5 +2,5 @@
 
 class Room < ApplicationRecord
   has_one_attached :interior
-  validates :room_name, uniqueness: true
+  validates :room_name, uniqueness: true, presence: true
 end

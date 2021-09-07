@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class RoomsController < ApplicationController
-  before_action :authenticate_admin!, only: %i[new show create]
+  before_action :authenticate_admin!, only: %i[new show create edit update]
 
   def index
     @rooms = Room.all
@@ -22,6 +22,20 @@ class RoomsController < ApplicationController
       redirect_to @room
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+    @room = Room.find(params[:id])
+  end
+
+  def update
+    @room = Room.find(params[:id])
+
+    if @room.update(room_params)
+      redirect_to @room
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 

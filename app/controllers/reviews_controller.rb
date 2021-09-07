@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ReviewsController < ApplicationController
-  before_action :authenticate_admin!, only: %i[new show index]
+  before_action :authenticate_admin!, only: %i[new show index edit update]
 
   def index
     @reviews = Review.all
@@ -28,6 +28,20 @@ class ReviewsController < ApplicationController
   def index_with_create
     @review = Review.new
     @reviews = Review.all
+  end
+
+  def edit
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    @review = Review.find(params[:id])
+
+    if @review.update(room_params)
+      redirect_to @review
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   private

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class BookingsController < ApplicationController
-  before_action :authenticate_admin!, only: %i[show index]
+  before_action :authenticate_admin!, only: %i[show index edit update]
 
   def index
     @bookings = Booking.all
@@ -22,6 +22,20 @@ class BookingsController < ApplicationController
       redirect_to @booking
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+
+    if @booking.update(room_params)
+      redirect_to @booking
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 

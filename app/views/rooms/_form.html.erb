@@ -1,0 +1,38 @@
+<%= form_with model: @room do |form| %>
+  <div>
+    <%= form.label :room_name %><br>
+    <%= form.text_field :room_name %>
+    <% @room.errors.full_messages_for(:room_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :capacity %><br>
+    <%= form.text_area :capacity %>
+    <% @room.errors.full_messages_for(:capacity).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :price %><br>
+    <%= form.text_area :price %>
+    <% @room.errors.full_messages_for(:price).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :interior %><br>
+    <%= form.file_field :interior %>
+  </div>
+
+  <div>
+    <% if flash[:errors] %>
+      <div class="errors"><%= flash[:errors] %></div>
+    <% end %>
+
+    <%= form.submit %>
+  </div>
+<% end %>
