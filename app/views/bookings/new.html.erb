@@ -1,0 +1,27 @@
+<h1>New Bookings</h1>
+
+<%= form_with model: @booking do |form| %>
+  <div>
+    <%= form.label :customer_first_name %><br>
+    <%= form.text_field :customer_first_name %>
+  </div>
+
+  <div>
+    <%= form.label :customer_second_name %><br>
+    <%= form.text_area :customer_second_name %>
+  </div>
+
+  <div>
+    <%= form.label :date_in %><br>
+    <%= form.date_select :date_in %>
+  </div>
+
+  <div>
+    <%= form.label :date_out %><br>
+    <%= form.date_select :date_out %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

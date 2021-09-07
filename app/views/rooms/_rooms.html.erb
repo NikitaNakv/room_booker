@@ -1,7 +1,7 @@
 <ul>
   <% @rooms.each do |room| %>
     <li>
-      <%= image_tag room.interior %>
+      <%= image_tag room.interior.variant(resize_to_limit: [150, nil]) %>
       <%= room.room_name %>
       <%= room.capacity %>
       <%= room.price %>

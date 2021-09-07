@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class ReviewsController < ApplicationController
+  before_action :authenticate_admin!, only: %i[new show index]
 
   def index
     @reviews = Review.all
@@ -16,10 +19,15 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
 
     if @review.save
-      redirect_to @review
+      redirect_to action: "index_with_create"
     else
-      render :new, status: :unprocessable_entity
+      render :index_with_create, status: :unprocessable_entity
     end
+  end
+
+  def index_with_create
+    @review = Review.new
+    @reviews = Review.all
   end
 
   private
@@ -27,5 +35,4 @@ class ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:reviewer_name, :email, :body)
   end
-
 end

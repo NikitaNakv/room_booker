@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer_first_name: MyString
+  customer_second_name: MyString
+  date_in: 2021-09-05
+  date_out: 2021-09-05
+  room: 
+  status: MyString
+
+two:
+  customer_first_name: MyString
+  customer_second_name: MyString
+  date_in: 2021-09-05
+  date_out: 2021-09-05
+  room: 
+  status: MyString

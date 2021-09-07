@@ -4,10 +4,9 @@
 
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Reviews</a></li>
-        <li><a href="#">Rooms</a></li>
-        <li><a href="#">Book a room</a></li>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Reviews", '/reviews/index_with_create' %></li>
+        <li><%= link_to "Rooms", rooms_path %></li>
       </ul>
     </nav>
   </div>
