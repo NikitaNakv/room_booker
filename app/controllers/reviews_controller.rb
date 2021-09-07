@@ -27,7 +27,7 @@ class ReviewsController < ApplicationController
 
   def index_with_create
     @review = Review.new
-    @reviews = Review.all
+    @reviews = Review.accepted? true
   end
 
   def edit
@@ -42,6 +42,13 @@ class ReviewsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+
+    redirect_to root_path
   end
 
   private

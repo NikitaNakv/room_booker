@@ -6,6 +6,10 @@ class Review < ApplicationRecord
   validates :email, format: { with: Devise.email_regexp }
   validates :body, presence: true, length: { minimum: 20 }
 
+  scope :accepted?, lambda { |status|
+    where('status == ?', status)
+  }
+
   def default_values
     self.status ||= false
   end
