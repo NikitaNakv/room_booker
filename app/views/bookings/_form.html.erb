@@ -16,6 +16,14 @@
   </div>
 
   <div>
+    <%= form.label :room_name %><br>
+    <%= form.text_area :room_name, :value => Room.find_by(id: @booking.room_id).room_name %>
+    <% @booking.errors.full_messages_for(:customer_second_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
     <%= form.label :date_in %><br>
     <%= form.date_select :date_in %>
     <% @booking.errors.full_messages_for(:date_in).each do |message| %>

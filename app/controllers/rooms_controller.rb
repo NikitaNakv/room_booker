@@ -2,6 +2,7 @@
 
 class RoomsController < ApplicationController
   before_action :authenticate_admin!, only: %i[new show create edit update]
+  rescue_from Exception, with: :render_404
 
   def index
     @rooms = Room.all
@@ -13,6 +14,10 @@ class RoomsController < ApplicationController
 
   def new
     @room = Room.new
+  end
+
+  def new_booking
+    @room = Room.find(params[:id])
   end
 
   def create
@@ -48,7 +53,11 @@ class RoomsController < ApplicationController
 
   private
 
+  def render_404
+    render template: "error_pages/404", layout: false, status: :not_found
+  end
+
   def room_params
-    params.require(:room).permit(:room_name, :capacity, :price, :interior)
+    params.require(:room).permit(:room_name, :capacity, :price, :desc, :interior)
   end
 end

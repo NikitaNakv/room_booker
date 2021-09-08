@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_07_134400) do
+ActiveRecord::Schema.define(version: 2021_09_07_221406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 2021_09_07_134400) do
     t.date "date_in"
     t.date "date_out"
     t.bigint "room_id"
-    t.string "status"
+    t.boolean "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["room_id"], name: "index_bookings_on_room_id"
@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 2021_09_07_134400) do
     t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "desc"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

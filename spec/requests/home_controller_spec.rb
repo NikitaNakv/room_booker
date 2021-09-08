@@ -1,7 +1,14 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe "HomeControllers", type: :request do
-  describe "GET /index" do
-    pending "add some examples (or delete) #{__FILE__}"
+  context "GET index" do
+    subject { get :index }
+    it "render index " do
+      expect(subject).to render_template("index")
+      expect(subject).to render_template(:index)
+      expect(subject).to render_template("home/index")
+    end
   end
 end

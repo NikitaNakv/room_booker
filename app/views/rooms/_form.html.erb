@@ -24,6 +24,14 @@
   </div>
 
   <div>
+    <%= form.label :desc %><br>
+    <%= form.text_area :desc %>
+    <% @room.errors.full_messages_for(:desc).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
     <%= form.label :interior %><br>
     <%= form.file_field :interior %>
   </div>

@@ -26,8 +26,10 @@ gem "redis", "~> 4.0"
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
+gem "acts_as_xlsx"
 gem "aws-sdk-s3", require: false
 gem "axlsx"
+gem "axlsx_rails"
 gem "devise"
 gem "image_processing", "~> 1.2"
 gem "rexml"
@@ -43,7 +45,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: %i[mri mingw x64_mingw]
   gem "rspec-rails"
-  gem 'simplecov', require: false
+  gem "simplecov", require: false
 end
 
 group :development do

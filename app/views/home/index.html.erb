@@ -1,5 +1,7 @@
 <h1>Welcome</h1>
-
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
 <p>Hotel "Moscow" is situated in the historical center of Saint-Petersburg, near Nevsky Prospekt, on the Neva embankment.
   Metro station is in the hotel bulding. In 20-25 minutes you will be able to reach major historical attractions:
   Hermitage, Admiralty, Russian museum. The rooms overlooking the architectural ensemble of Alexander Nevsky Lavra

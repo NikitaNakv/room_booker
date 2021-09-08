@@ -1,0 +1,26 @@
+<table>
+  <tr>
+    <th>customer_first_name</th>
+    <th>customer_second_name</th>
+    <th>room_name</th>
+    <th>date_in</th>
+    <th>date_out</th>
+    <th>status</th>
+    <th>created_at</th>
+  </tr>
+  <% @bookings.each do |booking| %>
+    <tr>
+      <td><%= booking.customer_first_name %></td>
+      <td><%= booking.customer_second_name %></td>
+      <td><%= Room.find_by(id: booking.room_id).room_name %></td>
+      <td><%= booking.date_in %></td>
+      <td><%= booking.date_out %></td>
+      <td><%= booking.status %></td>
+      <td><%= booking.created_at %></td>
+      <% if booking.status == false %><td><%= link_to "Accept", "/bookings/#{booking.id}/accept", method: :patch %></td><% end %>
+      <td><%= link_to "Destroy", review_path(booking), method: :delete %></td>
+    </tr>
+  <% end %>
+  <%= link_to 'Download as Excel', items_path(format: :xlsx) %>
+  <%= link_to 'Download as CSV', items_path(format: :csv) %>
+</table>

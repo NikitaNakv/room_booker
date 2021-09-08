@@ -1,5 +1,9 @@
 <h1>Reviews</h1>
 
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
 <%= render 'reviews/form' %>
 
 <%= render 'reviews/reviews' %>

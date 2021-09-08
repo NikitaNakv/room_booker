@@ -2,9 +2,10 @@
   <% @rooms.each do |room| %>
     <li>
       <%= image_tag room.interior.variant(resize_to_limit: [150, nil]) %>
-      <%= room.room_name %>
-      <%= room.capacity %>
-      <%= room.price %>
+      <%= link_to room.room_name, "/rooms/#{room.id}/book", method: :get %>
+      capacity: <%= room.capacity %>
+      price: <%= room.price %>
+      <%= room.desc %>
     </li>
   <% end %>
 </ul>

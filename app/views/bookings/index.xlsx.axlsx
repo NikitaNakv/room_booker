@@ -1,0 +1,11 @@
+# frozen_string_literal: true
+
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "Bookings") do |sheet|
+  sheet.add_row %w[customer_first_name customer_second_name date_in date_out status created_at]
+  @bookings.each do |booking|
+    sheet.add_row [booking.customer_first_name, booking.customer_second_name, booking.date_in, booking.date_out,
+                   booking.status, booking.created_at]
+  end
+end
