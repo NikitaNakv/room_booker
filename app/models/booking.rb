@@ -18,7 +18,13 @@ class Booking < ApplicationRecord
   end
 
   def to_excel
-    Booking.all.to_xlsx
+    xlsx_package = Booking.to_xlsx
+    begin
+      temp = Tempfile.new("bookings.xlsx")
+      xlsx_package.serialize temp.path
+    ensure
+      temp.close
+    end
   end
 
   def default_values

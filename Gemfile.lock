@@ -87,9 +87,6 @@ GEM
       htmlentities (~> 4.3.1)
       nokogiri (>= 1.4.1)
       rubyzip (>= 0.9.5)
-    axlsx_rails (0.6.1)
-      actionpack (>= 3.1)
-      caxlsx (>= 3.0)
     bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.8.1)
@@ -311,11 +308,10 @@ PLATFORMS
 DEPENDENCIES
   acts_as_xlsx
   aws-sdk-s3
-  axlsx
-  axlsx_rails
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  caxlsx
   devise
   image_processing (~> 1.2)
   jbuilder (~> 2.7)

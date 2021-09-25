@@ -7,14 +7,6 @@ class BookingsController < ApplicationController
   def index
     @bookings = Booking.all.order(created_at: :desc)
 
-    respond_to do |format|
-      format.xlsx do
-        response.headers[
-          "Content-Disposition"
-        ] = "attachment; filename='items.xlsx'"
-      end
-      format.html { render :index }
-    end
   end
 
   def show
