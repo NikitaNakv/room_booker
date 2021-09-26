@@ -21,6 +21,8 @@
       <td><%= link_to "Destroy", review_path(booking), method: :delete %></td>
     </tr>
   <% end %>
-  <%= link_to 'Download as Excel', items_path(format: :xlsx) %>
-  <%= link_to 'Download as CSV', items_path(format: :csv) %>
+
+  <p>link to download last generated report</p>
+  <% url_for(Report.last.file) %>
+
 </table>

@@ -3,7 +3,6 @@
 require "csv"
 
 class Booking < ApplicationRecord
-  acts_as_xlsx
   after_initialize :default_values
   belongs_to :room
   validates :customer_first_name, presence: true
@@ -11,20 +10,35 @@ class Booking < ApplicationRecord
   validates :date_in, presence: true
   validates :date_out, presence: true
 
+  scope :accepted?, lambda { |status|
+    where("status = ?", status)
+  }
+
   def to_csv
-    CSV.open("#{Time.current}.csv", "a") do |csv|
+    filename = "bookings-#{DateTime.current}.csv"
+    CSV.open("reports/#{filename}", "a") do |csv|
       csv << [customer_first_name, created_at]
     end
+    report = Report.create(name: filename, format: "excel")
+    report.file.attach(io: File.open("reports/#{filename}"), filename: filename, content_type: 'text/csv')
+    report.save
   end
 
   def to_excel
-    xlsx_package = Booking.to_xlsx
-    begin
-      temp = Tempfile.new("bookings.xlsx")
-      xlsx_package.serialize temp.path
-    ensure
-      temp.close
+    p = Axlsx::Package.new
+    wb = p.workbook
+    wb.add_worksheet(name: 'Bookings') do |sheet|
+      sheet.add_row ['customer_first_name', 'customer_second_name', 'room_name', 'date_in', 'date_out', 'created_at']
+      bookings = Booking.all
+      bookings.each do |booking|
+        sheet.add_row [booking.customer_first_name, booking.customer_second_name, Room.find_by(id: booking.room_id).room_name, booking.date_in, booking.date_out, booking.created_at]
+      end
     end
+    filename = "bookings-#{DateTime.current}.xlsx"
+    p.serialize "reports/#{filename}"
+    report = Report.create(name: filename, format: "excel")
+    report.file.attach(io: File.open("reports/#{filename}"), filename: filename, content_type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    report.save
   end
 
   def default_values

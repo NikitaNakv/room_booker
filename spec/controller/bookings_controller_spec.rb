@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe "BookingsControllers", type: :request do
+RSpec.describe "BookingsControllers", type: :controller do
   context "GET index" do
     it "assigns a blank booking to the view" do
       get :index

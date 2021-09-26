@@ -39,7 +39,6 @@
     <orderEntry type="library" scope="PROVIDED" name="activerecord (v6.1.4.1, rbenv: 3.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activestorage (v6.1.4.1, rbenv: 3.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v6.1.4.1, rbenv: 3.0.2) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="acts_as_xlsx (v1.0.6, rbenv: 3.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="addressable (v2.8.0, rbenv: 3.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ast (v2.4.2, rbenv: 3.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="aws-eventstream (v1.2.0, rbenv: 3.0.2) [gem]" level="application" />
@@ -48,7 +47,6 @@
     <orderEntry type="library" scope="PROVIDED" name="aws-sdk-kms (v1.48.0, rbenv: 3.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="aws-sdk-s3 (v1.102.0, rbenv: 3.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="aws-sigv4 (v1.4.0, rbenv: 3.0.2) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="axlsx (v1.3.6, rbenv: 3.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.16, rbenv: 3.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bindex (v0.8.1, rbenv: 3.0.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootsnap (v1.8.1, rbenv: 3.0.2) [gem]" level="application" />
