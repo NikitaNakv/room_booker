@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe "HomeControllers", type: :controller do
+RSpec.describe HomeController, type: :controller do
   context "GET index" do
     subject { get :index }
     it "render index " do

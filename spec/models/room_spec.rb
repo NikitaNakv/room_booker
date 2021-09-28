@@ -4,13 +4,26 @@ require "rails_helper"
 
 RSpec.describe Room, type: :model do
   context "validations" do
-    it { should validate_presence_of :room_name }
-    it { should validate_presence_of :capacity }
-    it { should validate_presence_of :price }
-    it { should validate_presence_of :desc }
+    context "validations" do
+      it "should validate presence of room_name" do
+        Room.create(desc: "roomroomroomroomroomroomroomroomroom", price: "20", capacity: "15")
+        expect(Room.count).to eq 0
+      end
 
-    it "validates presence of name" do
-      expect(room).to validate_uniqueness_of(:room_name)
+      it "should validate presence of desc" do
+        Room.create(room_name: "room", price: "20", capacity: "15")
+        expect(Room.count).to eq 0
+      end
+
+      it "should validate presence of price" do
+        Room.create(room_name: "room", desc: "roomroomroomroomroomroomroomroomroom", capacity: "15")
+        expect(Room.count).to eq 0
+      end
+
+      it "should validate presence of price" do
+        Room.create(room_name: "room", desc: "roomroomroomroomroomroomroomroomroom", price: "20")
+        expect(Room.count).to eq 0
+      end
     end
   end
 

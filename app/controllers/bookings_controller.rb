@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
   before_action :authenticate_admin!, only: %i[show index edit update]
   rescue_from ActionController::RoutingError, with: :render_404
 
+
   def index
     @bookings = Booking.all.order(created_at: :desc)
     ReportGeneratorJob.perform_later("csv")
@@ -44,6 +45,16 @@ class BookingsController < ApplicationController
     @booking.destroy
 
     redirect_to root_path
+  end
+
+  def generate_excel
+    ReportGeneratorJob.perform_later("excel")
+    redirect_to "/bookings/index"
+  end
+
+  def generate_csv
+    ReportGeneratorJob.perform_later("csv")
+    redirect_to "/bookings/index"
   end
 
   private

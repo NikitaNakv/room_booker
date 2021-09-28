@@ -12,7 +12,7 @@
     <tr>
       <td><%= booking.customer_first_name %></td>
       <td><%= booking.customer_second_name %></td>
-      <td><%= Room.find_by(id: booking.room_id).room_name %></td>
+      <td><%= booking.room.room_name %></td>
       <td><%= booking.date_in %></td>
       <td><%= booking.date_out %></td>
       <td><%= booking.status %></td>
@@ -22,7 +22,10 @@
     </tr>
   <% end %>
 
+  <button><%= link_to "Generate excel", '/bookings/excel' %></button>
+  <button><%= link_to "Generate csv", '/bookings/csv' %></button>
+
   <p>link to download last generated report</p>
-  <% url_for(Report.last.file) %>
+  <% link_to rails_blob_path(Report.last.file, disposition: "attachment") %>
 
 </table>

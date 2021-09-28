@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe "ReviewsControllers", type: :controller do
+RSpec.describe ReviewsController, type: :controller do
   context "GET index" do
     it "assigns a blank review to the view" do
       get :index

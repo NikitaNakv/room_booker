@@ -86,106 +86,88 @@
         "branches": {
         }
       },
-      "/home/nikita/Documents/RailsProj/hotel_booker/app/jobs/report_generator_job.rb": {
+      "/home/nikita/Documents/RailsProj/hotel_booker/app/controllers/rooms_controller.rb": {
         "lines": [
           null,
           null,
           1,
           1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
           null,
           1,
           0,
           0,
+          null,
           0,
           null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
           null,
           null
         ],
         "branches": {
-          "[:if, 0, 9, 6, 9, 57]": {
-            "[:then, 1, 9, 24, 9, 38]": 0,
-            "[:else, 2, 9, 41, 9, 57]": 0
+          "[:if, 0, 26, 4, 30, 7]": {
+            "[:then, 1, 27, 6, 27, 23]": 0,
+            "[:else, 2, 29, 6, 29, 48]": 0
+          },
+          "[:if, 3, 40, 4, 44, 7]": {
+            "[:then, 4, 41, 6, 41, 23]": 0,
+            "[:else, 5, 43, 6, 43, 49]": 0
           }
         }
       },
-      "/home/nikita/Documents/RailsProj/hotel_booker/app/jobs/application_job.rb": {
+      "/home/nikita/Documents/RailsProj/hotel_booker/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
           1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        "branches": {
-        }
-      },
-      "/home/nikita/Documents/RailsProj/hotel_booker/app/models/booking.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null
-        ],
-        "branches": {
-        }
-      },
-      "/home/nikita/Documents/RailsProj/hotel_booker/app/models/review.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
           null
         ],
         "branches": {
@@ -208,6 +190,6 @@
         }
       }
     },
-    "timestamp": 1632678220
+    "timestamp": 1632862980
   }
 }

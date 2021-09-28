@@ -4,14 +4,25 @@ require "rails_helper"
 
 RSpec.describe Review, type: :model do
   context "validations" do
-    it { should validate_presence_of :reviewer_name }
-    it { should validate_presence_of :email }
-    it { should validate_presence_of :body }
+    context "validations" do
+      it "should validate presence of body" do
+        Review.create(email: "wqerty@mail.ru")
+        expect(Review.count).to eq 0
+      end
+
+      it "should validate presence of email" do
+        Review.create(body: "this is review body")
+        expect(Review.count).to eq 0
+      end
+
+    end
   end
 
   context "scope with status" do
-    reviews = Review.accepted? true
     it "has status be true" do
+      Review.create(email: "wqerty@mail.ru", body: "this is review body body body")
+      Review.create(email: "wqerty@mail.ru", body: "this is review body body body", status: true)
+      reviews = Review.accepted? true
       expect reviews.first.status.to eq(true)
     end
   end
