@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class RoomsController < ApplicationController
-  before_action :authenticate_admin!, only: %i[new show create edit update]
-  rescue_from Exception, with: :render_404
+  before_action :authenticate_admin!, except: %i[index show]
+  rescue_from ActionController::RoutingError, with: :render_404
 
   def index
     @rooms = Room.all

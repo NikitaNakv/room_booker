@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class ReviewsController < ApplicationController
-  before_action :authenticate_admin!, only: %i[new show index edit update]
-  rescue_from Exception, with: :render_404
+  before_action :authenticate_admin!, except: %i[index_with_create]
+  rescue_from ActionController::RoutingError, with: :render_404
 
   def index
     @reviews = Review.all.order(created_at: :desc)

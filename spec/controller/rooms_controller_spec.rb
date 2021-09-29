@@ -19,7 +19,7 @@ RSpec.describe RoomsController, type: :controller do
   context "show room" do
     it "should render show view" do
       Room.create(room_name: "room", desc: "roomroomroomroomroomroomroomroomroom", price: "20", capacity: "15")
-      get :show, :params => { :id => 1 }
+      get :show, params: { id: 1 }
       expect(response).to render_template("show")
     end
   end
@@ -33,27 +33,27 @@ RSpec.describe RoomsController, type: :controller do
 
   context "POST create" do
     it "should show created room" do
-      post :create, :params => { :room => { :room_name => "very cool room", :desc => "roomroomroomroomroomroomroomroomroom123",
-                                                        :price => "20",
-                                                        :capacity => "15" }}
+      post :create, params: { room: { room_name: "very cool room", desc: "roomroomroomroomroomroomroomroomroom123",
+                                      price: "20",
+                                      capacity: "15" } }
       expect(response).to render_template("show")
     end
   end
 
-  context "show room" do
-    it "should render show view" do
+  context "edit room" do
+    it "should render edit view" do
       Room.create(room_name: "room", desc: "roomroomroomroomroomroomroomroomroom", price: "20", capacity: "15")
-      get :edit, :params => { :id => 1 }
+      get :edit, params: { id: 1 }
       expect(response).to render_template("edit")
     end
   end
 
   context "POST update" do
-    it "assigns a blank booking to the view" do
+    it "should render update view" do
       Room.create(room_name: "cool room", desc: "roomroomroomroomroomroomroomroomroom", price: "20", capacity: "15")
-      post :update, :params => { :id => "1", :room => { :room_name => "very cool room", :desc => "roomroomroomroomroomroomroomroomroom123",
-                                               :price => "20",
-                                               :capacity => "15" }}
+      post :update, params: { id: "1", room: { room_name: "very cool room", desc: "roomroomroomroomroomroomroomroomroom123",
+                                               price: "20",
+                                               capacity: "15" } }
       expect(response).to render_template("show")
     end
   end

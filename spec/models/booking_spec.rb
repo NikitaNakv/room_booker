@@ -26,15 +26,15 @@ RSpec.describe Booking, type: :model do
   end
 
   context "report generating" do
-    Booking.create(customer_first_name: "qwe", customer_second_name: "qwe", date_in: DateTime.current, date_out: DateTime.current)
-    bookings = Booking.all
+    Booking.create(customer_first_name: "qwe", customer_second_name: "qwe", date_in: DateTime.current,
+                   date_out: DateTime.current)
     it "should generate csv file" do
-      bookings.to_csv
+      Booking.to_csv
       expect(true).to eq true
     end
 
     it "should generate excel file" do
-      bookings.to_excel
+      Booking.to_excel
       expect(true).to eq true
     end
   end

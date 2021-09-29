@@ -14,7 +14,6 @@ RSpec.describe Review, type: :model do
         Review.create(body: "this is review body")
         expect(Review.count).to eq 0
       end
-
     end
   end
 

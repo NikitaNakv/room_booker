@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-class BookingsController < ApplicationController
-  before_action :authenticate_admin!, only: %i[show index edit update]
-  rescue_from ActionController::RoutingError, with: :render_404
 
+class BookingsController < ApplicationController
+  before_action :authenticate_admin!, except: %i[new create]
+  rescue_from ActionController::RoutingError, with: :render_404
 
   def index
     @bookings = Booking.all.order(created_at: :desc)

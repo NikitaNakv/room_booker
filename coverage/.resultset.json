@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/nikita/Documents/RailsProj/hotel_booker/app/models/admin.rb": {
+      "/home/student5/Documents/room_booker/app/models/admin.rb": {
         "lines": [
           null,
           null,
@@ -15,7 +15,7 @@
         "branches": {
         }
       },
-      "/home/nikita/Documents/RailsProj/hotel_booker/app/models/application_record.rb": {
+      "/home/student5/Documents/room_booker/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -26,7 +26,7 @@
         "branches": {
         }
       },
-      "/home/nikita/Documents/RailsProj/hotel_booker/app/helpers/admins_helper.rb": {
+      "/home/student5/Documents/room_booker/app/helpers/admins_helper.rb": {
         "lines": [
           null,
           null,
@@ -36,7 +36,7 @@
         "branches": {
         }
       },
-      "/home/nikita/Documents/RailsProj/hotel_booker/app/helpers/application_helper.rb": {
+      "/home/student5/Documents/room_booker/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -46,7 +46,7 @@
         "branches": {
         }
       },
-      "/home/nikita/Documents/RailsProj/hotel_booker/app/helpers/bookings_helper.rb": {
+      "/home/student5/Documents/room_booker/app/helpers/bookings_helper.rb": {
         "lines": [
           null,
           null,
@@ -56,7 +56,7 @@
         "branches": {
         }
       },
-      "/home/nikita/Documents/RailsProj/hotel_booker/app/helpers/home_helper.rb": {
+      "/home/student5/Documents/room_booker/app/helpers/home_helper.rb": {
         "lines": [
           null,
           null,
@@ -66,7 +66,7 @@
         "branches": {
         }
       },
-      "/home/nikita/Documents/RailsProj/hotel_booker/app/helpers/reviews_helper.rb": {
+      "/home/student5/Documents/room_booker/app/helpers/reviews_helper.rb": {
         "lines": [
           null,
           null,
@@ -76,7 +76,7 @@
         "branches": {
         }
       },
-      "/home/nikita/Documents/RailsProj/hotel_booker/app/helpers/rooms_helper.rb": {
+      "/home/student5/Documents/room_booker/app/helpers/rooms_helper.rb": {
         "lines": [
           null,
           null,
@@ -86,102 +86,81 @@
         "branches": {
         }
       },
-      "/home/nikita/Documents/RailsProj/hotel_booker/app/controllers/rooms_controller.rb": {
+      "/home/student5/Documents/room_booker/app/models/booking.rb": {
         "lines": [
           null,
           null,
           1,
-          1,
-          1,
           null,
           1,
-          0,
-          null,
-          null,
           1,
-          0,
-          null,
-          null,
           1,
-          0,
-          null,
+          1,
+          1,
+          1,
+          1,
           null,
           1,
           0,
           null,
           null,
           1,
-          0,
+          1,
+          1,
+          1,
           null,
           0,
           0,
+          0,
           null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           0,
           null,
           null,
           null,
           1,
-          0,
-          null,
-          null,
           1,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
           1,
-          0,
-          0,
+          1,
           null,
           0,
           null,
           null,
           1,
-          null,
           1,
-          1,
-          null,
-          null,
-          1,
-          0,
           null,
           null
         ],
         "branches": {
-          "[:if, 0, 26, 4, 30, 7]": {
-            "[:then, 1, 27, 6, 27, 23]": 0,
-            "[:else, 2, 29, 6, 29, 48]": 0
-          },
-          "[:if, 3, 40, 4, 44, 7]": {
-            "[:then, 4, 41, 6, 41, 23]": 0,
-            "[:else, 5, 43, 6, 43, 49]": 0
-          }
         }
       },
-      "/home/nikita/Documents/RailsProj/hotel_booker/app/controllers/application_controller.rb": {
+      "/home/student5/Documents/room_booker/app/models/room.rb": {
         "lines": [
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           null
         ],
         "branches": {
         }
       },
-      "/home/nikita/Documents/RailsProj/hotel_booker/app/models/room.rb": {
+      "/home/student5/Documents/room_booker/app/models/report.rb": {
         "lines": [
           null,
           null,
-          1,
-          1,
-          1,
-          1,
-          1,
           1,
           1,
           null
@@ -190,6 +169,6 @@
         }
       }
     },
-    "timestamp": 1632862980
+    "timestamp": 1632912400
   }
 }
