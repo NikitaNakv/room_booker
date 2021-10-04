@@ -2,7 +2,7 @@
 
 class RoomsController < ApplicationController
   before_action :authenticate_admin!, except: %i[index show]
-  rescue_from ActionController::RoutingError, with: :render_404
+  rescue_from ActionController::RoutingError, ActiveRecord::RecordNotFound, with: :render_404
 
   def index
     @rooms = Room.all

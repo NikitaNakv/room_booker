@@ -86,19 +86,17 @@
         "branches": {
         }
       },
-      "/home/student5/Documents/room_booker/app/models/booking.rb": {
+      "/home/student5/Documents/room_booker/app/controllers/reviews_controller.rb": {
         "lines": [
           null,
           null,
           1,
+          1,
+          1,
           null,
           1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
+          2,
+          null,
           null,
           1,
           0,
@@ -106,30 +104,40 @@
           null,
           1,
           1,
+          null,
+          null,
           1,
           1,
           null,
+          1,
+          0,
+          0,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
           0,
           0,
           0,
           null,
           null,
           1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
+          0,
+          0,
+          null,
           0,
           null,
           null,
-          null,
-          1,
-          1,
-          1,
           1,
           null,
+          1,
           0,
           null,
           null,
@@ -139,36 +147,45 @@
           null
         ],
         "branches": {
+          "[:if, 0, 22, 4, 27, 7]": {
+            "[:then, 1, 23, 6, 24, 45]": 0,
+            "[:else, 2, 26, 6, 26, 62]": 1
+          }
         }
       },
-      "/home/student5/Documents/room_booker/app/models/room.rb": {
+      "/home/student5/Documents/room_booker/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
           1,
           null
         ],
         "branches": {
         }
       },
-      "/home/student5/Documents/room_booker/app/models/report.rb": {
+      "/home/student5/Documents/room_booker/app/models/review.rb": {
         "lines": [
           null,
           null,
           1,
           1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          8,
+          null,
           null
         ],
         "branches": {
         }
       }
     },
-    "timestamp": 1632912400
+    "timestamp": 1633337234
   }
 }

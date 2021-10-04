@@ -3,6 +3,8 @@
 require "rails_helper"
 
 RSpec.describe RoomsController, type: :controller do
+  before { allow(controller).to receive(:authenticate_admin!).and_return(true) }
+
   context "GET index" do
     it "should renders index view" do
       get :index
@@ -18,7 +20,7 @@ RSpec.describe RoomsController, type: :controller do
 
   context "show room" do
     it "should render show view" do
-      Room.create(room_name: "room", desc: "roomroomroomroomroomroomroomroomroom", price: "20", capacity: "15")
+      Room.create(id: 1, room_name: "room", desc: "roomroomroomroomroomroomroomroomroom", price: "20", capacity: "15")
       get :show, params: { id: 1 }
       expect(response).to render_template("show")
     end
@@ -36,13 +38,13 @@ RSpec.describe RoomsController, type: :controller do
       post :create, params: { room: { room_name: "very cool room", desc: "roomroomroomroomroomroomroomroomroom123",
                                       price: "20",
                                       capacity: "15" } }
-      expect(response).to render_template("show")
+      expect(response).to redirect_to(action: :show, id: assigns(:room).id)
     end
   end
 
   context "edit room" do
     it "should render edit view" do
-      Room.create(room_name: "room", desc: "roomroomroomroomroomroomroomroomroom", price: "20", capacity: "15")
+      Room.create(id: 1, room_name: "room", desc: "roomroomroomroomroomroomroomroomroom", price: "20", capacity: "15")
       get :edit, params: { id: 1 }
       expect(response).to render_template("edit")
     end
@@ -50,11 +52,27 @@ RSpec.describe RoomsController, type: :controller do
 
   context "POST update" do
     it "should render update view" do
-      Room.create(room_name: "cool room", desc: "roomroomroomroomroomroomroomroomroom", price: "20", capacity: "15")
-      post :update, params: { id: "1", room: { room_name: "very cool room", desc: "roomroomroomroomroomroomroomroomroom123",
+      room = Room.create(room_name: "cool room", desc: "roomroomroomroomroomroomroomroomroom", price: "20", capacity: "15")
+      patch :update, params: { id: room.id, room: { room_name: "very cool room", desc: "roomroomroomroomroomroomroomroomroom123",
                                                price: "20",
                                                capacity: "15" } }
-      expect(response).to render_template("show")
+      expect(response).to redirect_to(action: :show, id: room.id)
+    end
+  end
+
+  context "DELETE destroy" do
+    it "should destroy object with id" do
+      room = Room.create(room_name: "cool room", desc: "roomroomroomroomroomroomroomroomroom", price: "20", capacity: "15")
+      delete :destroy, params: { id: room.id }
+      expect(Room.count).to eq 0
+    end
+  end
+
+  context "GET not existing page" do
+    it "should render not found/404" do
+      Room.create(id: 1, room_name: "room", desc: "roomroomroomroomroomroomroomroomroom", price: "20", capacity: "15")
+      get :show, params: { id: 2 }
+      expect(response).to render_template("error_pages/404")
     end
   end
 end
